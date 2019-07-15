@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    {% extends "bootstrap/base.html" %}
+    <meta charset="utf-8">
+    {% block title %}手書文字認識アプリ{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <!--Twitter連携機能-->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="手書き文字認識アプリ" />
+    <meta name="twitter:title" content="手書き文字認識アプリ" />
+    <meta name="twitter:description" content="手書き文字認識アプリ" />
+    <meta name="twitter:url" content="" />
+  </head>
+  <body>
+    {% block content %}
+    <div class="center">
+      <h1>手書きのひらがなの文字を判別します！！！</h1>
+      <p>画像(png)をアップロードしてください</p>
+      <form method="post" action="/send" enctype="multipart/form-data">
+　　    <input type="file" id="img_file" name="img_file">
+  　　  <input type="submit" value="判別する" class="btn">
+      <!--<p>1MB以上の画像はアップロードできません</p>-->
+      <p style="color: {{color}};"> {{ massege }} </p>
+　　  </form>
+
+      <!--<img src="{{img_result}}" />-->
+      <p style="color: {{color}};"> {{ hiragana }} </p>
+      <p style="color: {{color}};"> {{ score }} </p>
+
+      <div class="container text-center">
+        <button class="btn btn-dark m-3" onclick="openTwitter(text,url,hash,account)">ツイートする</button> 
+      </div> 
+      <div class="container text-center">
+        <a href="./">戻る</a>
+      </div> 
+    </div>
+
+    
+
+  <script>
+    text = "{{ hiragana }}を書いた！認識度は{{ score }}だった！";
+    url = "";
+    hash = "手書き文字認識アプリ";
+    account = "hogehogefugafuga";
+    function openTwitter(text,url,hash,account) {
+        var turl = "https://twitter.com/intent/tweet?text="+text+"&url="+url+"&hashtags="+hash+"&via="+account;
+        window.open(turl,'_blank');
+    }
+</script>
+{% endblock %}
+  </body>
+</html>
+
+<style type="text/css">
+div {
+  background: #ffffff;
+  width: 90%;
+  padding: 10px;
+  text-align: center;
+  margin: 0 auto;
+  height: 50%;
+  position:relative;
+}
+</style>
