@@ -14,28 +14,37 @@
     <meta name="twitter:title" content="手書き文字認識アプリ" />
     <meta name="twitter:description" content="手書き文字認識アプリ" />
     <meta name="twitter:url" content="" />
+    <style type="text/css">
+    form {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      text-align: center;
+    }
+    </style>
   </head>
   <body>
     {% block content %}
-    <div class="center">
+    <div class="container text-center">
+    <div>
       <h1>手書きのひらがなの文字を判別します！！！</h1>
       <p>画像(png)をアップロードしてください</p>
-      <form method="post" action="/send" enctype="multipart/form-data">
-　　    <input type="file" id="img_file" name="img_file">
-  　　  <input type="submit" value="判別する" class="btn">
-      <!--<p>1MB以上の画像はアップロードできません</p>-->
-      <p style="color: {{color}};"> {{ massege }} </p>
-　　  </form>
-
+      <div class="input_wrap">
+        <form method="post" action="/send" enctype="multipart/form-data">
+          <input type="file" id="img_file" name="img_file">
+          <input type="submit" value="判別する" class="btn btn-primary mb-2">
+          <!--<p>1MB以上の画像はアップロードできません</p>-->
+          <p style="color: {{color}};"> {{ massege }} </p>
+        </form>
+      </div>
+      
       <!--<img src="{{img_result}}" />-->
-      <p style="color: {{color}};"> {{ hiragana }} </p>
-      <p style="color: {{color}};"> {{ score }} </p>
+      <p style="color: {{color}}; font-size: 50px"> {{ hiragana }} </p>
+      <p style="color: {{color}}; font-size: 30px"> {{ score }} </p>
 
-      <div class="container text-center">
-        <button class="btn btn-dark m-3" onclick="openTwitter(text,url,hash,account)">ツイートする</button> 
-      </div> 
-      <div class="container text-center">
-        <a href="./">戻る</a>
+      
+        <button class="btn btn-primary mb-2" onclick="openTwitter(text,url,hash,account)">ツイート</button> 
+        <button class="btn btn-primary mb-2" onclick="history.back()">戻る</button>
       </div> 
     </div>
 
@@ -57,12 +66,18 @@
 
 <style type="text/css">
 div {
-  background: #ffffff;
-  width: 90%;
   padding: 10px;
   text-align: center;
   margin: 0 auto;
-  height: 50%;
   position:relative;
+}
+.center{
+  border: 1px solid #aaa;
+  width: 400px;
+  text-align: center;
+}
+
+.input_wrap {
+  text-align: center;
 }
 </style>

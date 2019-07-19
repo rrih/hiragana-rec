@@ -41,9 +41,6 @@ def index():
 # ここから本命．画像のI/O処理
 @app.route('/send', methods = ['POST'])
 def posttest():
-    #print('入力してください')
-    #a = input()
-    #png_name = a
     png_name = request.files['img_file']
     result_name = "./" + png_name.filename # 最後のimg用に保存しておく
     # ファイルの拡張子を取得する
@@ -58,11 +55,6 @@ def posttest():
     i.save(os.path.join(UPLOAD_FOLDER, new_name))
     
     print(new_name)
-    #cv2.imread(request.files['img_file'])
-    #cv2.write('/Users/theorem/hiragana-recognition/image_sin.png', png_name)
-    #png_name = png_name.filename
-    # ファイルの保存
-    #png_name.save(os.path.join(app.config['UPLOAD_FOLDER'], png_name)) #join
 
     model_file_name = '16_ETL7-CNN-VGG-like_model' #モデル
     model = load_model('/Users/theorem/hiragana-recognition/' + model_file_name + '.h5')
