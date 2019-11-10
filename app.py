@@ -15,6 +15,7 @@ from keras.models import load_model
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+matplotlib.use('Agg')
 from keras.preprocessing.image import img_to_array, load_img
 
 app = Flask(__name__)
