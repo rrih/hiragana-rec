@@ -1,1 +1,1 @@
-gunicorn --log-file=- hiragana-rec.wsgi:application
+web: gunicorn hiragana-rec:app --log-file=-
