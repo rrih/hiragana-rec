@@ -40,9 +40,9 @@ alabaster==0.7.9
 # dominate==2.3.5
 # et-xmlfile==1.0.1
 # fastcache==1.0.2
-# Flask==0.12
-# Flask-Bootstrap==3.3.7.1
-# Flask-Cors==3.0.2
+Flask==0.12
+Flask-Bootstrap==3.3.7.1
+Flask-Cors==3.0.2
 # gast==0.2.2
 # gevent==1.2.1
 # greenlet==0.4.11
