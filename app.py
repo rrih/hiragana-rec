@@ -57,18 +57,18 @@ def posttest():
     print(new_name)
 
     model_file_name = '16_ETL7-CNN-VGG-like_model' #モデル
-    model = load_model('/Users/theorem/hiragana-recognition/' + model_file_name + '.h5')
-    img_path = ('/Users/theorem/hiragana-recognition/' + new_name) # 一旦.png消した
+    model = load_model('./' + model_file_name + '.h5')
+    img_path = ('./' + new_name) # 一旦.png消した
 
 
     #読み込んだファイルの色を反転
     imge = cv2.imread(img_path)
     img_path2 = cv2.bitwise_not(imge)
-    cv2.imwrite('/Users/theorem/hiragana-recognition/image_sin.png',img_path2)
+    cv2.imwrite('./image_sin.png',img_path2)
 
     #パス名の更新
     png_name = 'image_sin'
-    img_path = ('/Users/theorem/hiragana-recognition/' + png_name + '.png')
+    img_path = ('./' + png_name + '.png')
 
 
     img = img_to_array(load_img(img_path, grayscale=True, target_size=(32, 32)))
