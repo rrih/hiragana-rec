@@ -1,0 +1,4 @@
+vscode
+*.png
+heroku_env
+env
