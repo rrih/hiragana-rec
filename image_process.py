@@ -8,3 +8,4 @@ def imwrite(image):
     mylist.append(image [0:400, 1200:1600])
     mylist.append(image [0:400, 1600:2000])
     return mylist
+    

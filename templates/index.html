@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <!--Twitter連携機能-->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="手書き文字認識アプリ" />
     <meta name="twitter:title" content="手書き文字認識アプリ" />
@@ -33,12 +32,10 @@
         <form method="post" action="/send" enctype="multipart/form-data">
           <input type="file" id="img_file" name="img_file">
           <input type="submit" value="判別する" class="btn btn-primary mb-2">
-          <!--<p>1MB以上の画像はアップロードできません</p>-->
           <p style="color: {{color}};"> {{ massege }} </p>
         </form>
       </div>
       
-      <!--<img src="{{img_result}}" />-->
       <p style="color: {{color}}; font-size: 50px"> {{ hiragana }} </p>
       <p style="color: {{color}}; font-size: 30px"> {{ score }} </p>
 
@@ -54,7 +51,7 @@
     text = "{{ hiragana }}を書いた！認識度は{{ score }}だった！";
     url = "";
     hash = "手書き文字認識アプリ";
-    account = "hogehogefugafuga";
+    account = "hiragana_reco";
     function openTwitter(text,url,hash,account) {
         var turl = "https://twitter.com/intent/tweet?text="+text+"&url="+url+"&hashtags="+hash+"&via="+account;
         window.open(turl,'_blank');
