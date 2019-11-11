@@ -1,4 +1,8 @@
-vscode
+.vscode
+
 *.png
-heroku_env
-env
+*.jpg
+
+
+heroku_env/
+env/
