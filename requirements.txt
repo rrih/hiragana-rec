@@ -152,7 +152,7 @@ qrcode==6.1
 # sympy==1.0
 # tables==3.3.0
 tensorboard==1.13.1
-tensorflow==1.13.1
+tensorflow==1.15.0
 tensorflow-estimator==1.13.0
 # termcolor==1.1.0
 # terminado==0.6
