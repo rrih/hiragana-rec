@@ -1,7 +1,6 @@
-## 手書きのひらがなを認識するアプリ
+## hiragana-rec
 ```
-$ cd
-$ git clone https://github.com/roiyh/hiragana-rec.git
+$ git clone https://github.com/ryohek/hiragana-rec.git
 $ cd hiragana-rec
 $ python app.py
 ```
