@@ -1,6 +1,6 @@
 ## hiragana-rec
 ```
-$ git clone https://github.com/ryohek/hiragana-rec.git
+$ git clone https://github.com/rrih/hiragana-rec.git
 $ cd hiragana-rec
 $ python app.py
 ```
